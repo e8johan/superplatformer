@@ -2,6 +2,9 @@
 
 This is the Super Platformer - a Godot game made by me and my kids.
 
+![alt text](screenshots/gameplay.png "Gameplay")
+
+
 # Todo
 
 I want to get the following done (in no particular order):
