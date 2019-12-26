@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/tiles/Tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://src/actors/Stompa.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=3]
+
+[node name="TestLevel" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65536, 2, 0, 65549, 2, 0, 65550, 2, 0, 65551, 2, 0, 65569, 2, 0, 131072, 1, 0, 131105, 1, 0, 196608, 1, 0, 196614, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 196627, 2, 0, 196628, 2, 0, 196641, 0, 0, 262144, 1, 0, 262145, 2, 0, 262146, 2, 0, 262151, 1, 0, 262152, 1, 0, 262153, 0, 0, 262177, 1, 0, 327680, 0, 0, 327681, 1, 0, 327682, 1, 0, 327713, 1, 0, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393231, 2, 0, 393232, 2, 0, 393239, 2, 0, 393240, 2, 0, 393249, 1, 0, 458752, 1, 0, 458753, 0, 0, 458754, 1, 0, 458755, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458767, 1, 0, 458768, 0, 0, 458769, 2, 0, 458770, 2, 0, 458771, 2, 0, 458772, 2, 0, 458773, 2, 0, 458774, 2, 0, 458775, 1, 0, 458776, 1, 0, 458777, 2, 0, 458778, 2, 0, 458779, 2, 0, 458780, 2, 0, 458781, 2, 0, 458782, 2, 0, 458783, 2, 0, 458784, 2, 0, 458785, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 2, 0, 524293, 2, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524308, 1, 0, 524309, 0, 0, 524310, 1, 0, 524311, 1, 0, 524312, 1, 0, 524313, 1, 0, 524314, 1, 0, 524315, 1, 0, 524316, 1, 0, 524317, 1, 0, 524318, 0, 0, 524319, 1, 0, 524320, 1, 0, 524321, 1, 0 )
+
+[node name="Stompa" parent="." instance=ExtResource( 2 )]
+position = Vector2( 293, 500 )
+
+[node name="Stompa2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1192, 439 )
+
+[node name="Stompa3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1636, 442 )
+
+[node name="Stompa4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 612, 505 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 127, 111 )
+
+[node name="Camera2D" parent="Player" index="2"]
+limit_right = 2174
+
+[editable path="Player"]
