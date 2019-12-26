@@ -1,5 +1,5 @@
 extends ActorBase
-class_name Player, "res://assets/player/player_idle.png"
+class_name Player, "res://assets/player/player_symbol.png"
 
 func _physics_process(delta: float) -> void:
     var cancel_jump := Input.is_action_just_released("move_jump") and _velocity.y < 0.0

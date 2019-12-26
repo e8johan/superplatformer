@@ -26,8 +26,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "ActorBase": "",
-"Player": "res://assets/player/player_idle.png",
-"Stompa": "res://assets/monsters/stompa/stompa_idle.png"
+"Player": "res://assets/player/player_symbol.png",
+"Stompa": "res://assets/monsters/stompa/stompa_symbol.png"
 }
 
 [application]

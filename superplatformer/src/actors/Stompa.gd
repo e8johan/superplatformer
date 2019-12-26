@@ -1,5 +1,5 @@
 extends ActorBase
-class_name Stompa, "res://assets/monsters/stompa/stompa_idle.png"
+class_name Stompa, "res://assets/monsters/stompa/stompa_symbol.png"
 
 func _ready() -> void:
     _velocity.x = speed.x
