@@ -36,6 +36,11 @@ config/name="Super Platformer"
 run/main_scene="res://src/levels/TestLevel.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [input]
 
 move_left={
