@@ -26,7 +26,7 @@ position = Vector2( 1192, 439 )
 position = Vector2( 1636, 442 )
 
 [node name="Stompa4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 612, 505 )
+position = Vector2( 469, 138 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 127, 111 )
