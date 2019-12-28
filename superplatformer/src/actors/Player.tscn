@@ -26,3 +26,12 @@ limit_top = 0
 smoothing_enabled = true
 drag_margin_left = 0.0
 drag_margin_right = 0.0
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyDetector"]
+position = Vector2( 0, -75 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]

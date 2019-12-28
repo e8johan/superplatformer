@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/actors/Stompa.gd" type="Script" id=1]
 [ext_resource path="res://assets/monsters/stompa/stompa_idle.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 32.0
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 30, 24 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 34, 16 )
 
 [node name="Stompa" type="KinematicBody2D"]
 collision_layer = 2
-collision_mask = 9
+collision_mask = 8
 script = ExtResource( 1 )
 speed = Vector2( 400, 1200 )
 
@@ -17,8 +20,8 @@ position = Vector2( 0, -32 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -32 )
-shape = SubResource( 1 )
+position = Vector2( 0, -24 )
+shape = SubResource( 3 )
 
 [node name="GroundDetectorRight" type="RayCast2D" parent="."]
 position = Vector2( 32, -32 )
@@ -31,3 +34,11 @@ position = Vector2( -32, -32 )
 enabled = true
 cast_to = Vector2( 0, 35 )
 collision_mask = 8
+
+[node name="StompDetector" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
+position = Vector2( 0, -58 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]

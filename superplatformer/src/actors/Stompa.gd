@@ -5,10 +5,17 @@ export var stop_at_edges : bool = true setget _set_stop_at_edges
 
 onready var groundDetectorRight = $GroundDetectorRight
 onready var groundDetectorLeft = $GroundDetectorLeft
+onready var stompDetector = $StompDetector
+onready var collisionShape = $CollisionShape2D
 
 func _ready() -> void:
     _velocity.x = speed.x
     _set_stop_at_edges(stop_at_edges)
+
+func _on_StompDetector_body_entered(body: PhysicsBody2D) -> void:
+    if body.global_position.y < stompDetector.global_position.y:
+        collisionShape.disabled = true
+        queue_free()
 
 func _physics_process(delta: float) -> void:
     _velocity.y += gravity * delta

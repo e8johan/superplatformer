@@ -1,6 +1,9 @@
 extends ActorBase
 class_name Player, "res://assets/player/player_symbol.png"
 
+func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
+    queue_free()
+
 func _physics_process(delta: float) -> void:
     var cancel_jump := Input.is_action_just_released("move_jump") and _velocity.y < 0.0
     var direction := get_direction()
