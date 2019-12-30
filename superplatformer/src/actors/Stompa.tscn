@@ -3,7 +3,7 @@
 [ext_resource path="res://src/actors/Stompa.gd" type="Script" id=1]
 [ext_resource path="res://assets/monsters/stompa/stompa_idle.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 24 )
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -13,7 +13,7 @@ extents = Vector2( 34, 16 )
 collision_layer = 2
 collision_mask = 8
 script = ExtResource( 1 )
-speed = Vector2( 400, 1200 )
+speed = Vector2( 200, 1200 )
 
 [node name="stompa_idle" type="Sprite" parent="."]
 position = Vector2( 0, -32 )
@@ -21,7 +21,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -24 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="GroundDetectorRight" type="RayCast2D" parent="."]
 position = Vector2( 32, -32 )
