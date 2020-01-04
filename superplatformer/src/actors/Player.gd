@@ -1,14 +1,38 @@
 extends ActorBase
 class_name Player, "res://assets/player/player_symbol.png"
 
+onready var animation = $AnimatedSprite
+
+func _ready() -> void:
+    animation.play("idle")
+
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
     queue_free()
 
 func _physics_process(delta: float) -> void:
+    var anim = "idle"
+    var flip = false
+
     var cancel_jump := Input.is_action_just_released("move_jump") and _velocity.y < 0.0
     var direction := get_direction()
     _velocity = calculate_move_velocity(_velocity, direction, speed, cancel_jump)
+
+    if _velocity.x < 0:
+        anim = "walk"
+        flip = true
+    elif _velocity.x > 0:
+        anim = "walk"
+        flip = false
+        
+    # TODO add logic for jumping here
+
     _velocity = move_and_slide(_velocity, Vector2.UP)
+
+    # TODO add logic for calling here
+
+    animation.play(anim)
+    animation.flip_h = flip
+
     
 func get_direction() -> Vector2:
     return Vector2(
