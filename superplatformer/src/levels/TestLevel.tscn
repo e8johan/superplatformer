@@ -12,6 +12,7 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = -10
 
 [node name="blue" type="Sprite" parent="CanvasLayer"]
